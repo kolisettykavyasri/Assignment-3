@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Toggle Box</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="toggle-container">
+        <button id="toggleButton" class="toggle-button">Press Me</button>
+        <div id="contentText" class="content-text">Hello, Universe!</div>
+    </div>
+
+    <script>
+        const button = document.getElementById('toggleButton');
+        const contentText = document.getElementById('contentText');
+        const container = document.querySelector('.toggle-container');
+
+        button.addEventListener('click', () => {
+            if (container.classList.toggle('active')) {
+                button.textContent = 'Reset';
+                contentText.textContent = 'Bye!';
+            } else {
+                button.textContent = 'Press Me';
+                contentText.textContent = 'Helloo!';
+            }
+        });
+    </script>
+</body>
+</html>
